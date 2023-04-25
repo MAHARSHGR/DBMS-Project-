@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Link</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .info {
+            font-size: 35px;
+        }
+
+        bt {
+            text-align: center;
+            border: 2px solid black;
+            margin-left: 50px;
+        }
+
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #2980B9;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            left: 500px;
+            bottom: 200px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .subtitle {
+            background-color: rgba(26, 25, 25, 0.6);
+            padding: 5px 5px;
+            color: #f9d16b;
+            bottom: 80px;
+            text-align: center;
+            display: relative;
+            position: relative;
+            font-size: 20px;
+            text-decoration: underline;
+            font-family: 'Mukta', sans-serif;
+            /* backdrop-filter: blur(5px); */
+            /* position: relative; */
+            left: 20px;
+        }
+
+        /* .auto-input {
+            background-color: rgba(26, 25, 25, 0.6);
+            padding: 5px 5px;
+        } */
+    </style>
+</head>
+
+<header>
+    <h1 id="h1">
+        <img src="/logo.jpg" alt="logo" id="logo">
+        RENTAL SOLUTIONS
+    </h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <!-- <li><a href="/contact">ContactUs</a></li> -->
+        </ul>
+    </nav>
+</header>
+<section class="body">
+
+    <body>
+
+        <div class="container">
+            <div class="subtitle">
+                <b>
+                    <h1>SIMPLER WAY TO SEARCH RENTAL UNITS</h1>
+                </b>
+            </div>
+            <b>
+                <!-- <p class="info"> <b> Better and Smarter way to search rooms and pg's in a particular place without any
+                        confusion or any
+                        prerequisite of the place. Direct contact with owner and tenant, book your flats now using
+                        rental
+                        link.</b></p> -->
+            </b>
+        </div>
+        <strong>
+            <p class="info">
+                <!-- Better and Smarter way to search rooms and pg's in a particular place without any confusion or any
+            prerequisite of the place. Direct contact with owner and tenant, book your flats now using rental
+            link. -->
+                <span class="auto-input"></span>
+            </p>
+        </strong>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Continue as</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="/register">Tenant</a>
+                <a href="/owner_register">Owner</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="center">
+                Copyright &copy; www.RentalLink.com. All rights reserved
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script>
+            var typed = new Typed(".auto-input", {
+                strings: ["Better way to search rentals", "Search at any place at any time", "Direct contact with owners at ease"],
+                typeSpeed: 40,
+                backSpeed: 20,
+                loop: true
+            })
+        </script>
+        <script>
+
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+
+
+
+        </script>
+
+    </body>
+
+</html>

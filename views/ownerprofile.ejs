@@ -1,0 +1,139 @@
+<!-- ownerprofile.ejs  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Link</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<header>
+    <h1 id="h1">
+        <a href="/index"><img src="/logo.jpg" alt="logo" id="logo"></a>
+        RENTAL LINK
+    </h1>
+
+    <!-- <hr> -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <!-- <li><a href="#contact">ContactUs</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="tenant.html">Tenant</a></li> -->
+            <li><a href="/owner_login">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<body id="color">
+
+
+
+
+
+
+    <div class="prohead">
+        <h1>Profile</h1>
+    </div>
+    <div class="ownerdet">
+        <div class="ownername">
+            <p class="ownername"> Name:<%- o[0].NAME %> </p>
+        </div>
+        <hr>
+        <p>email_ID : <%- o[0].EMAIL_ID %></p>
+        <hr>
+        <p>Contact Number : <%- o[0].CONTACT %></p>
+        <hr>
+        <p>Address: <%- o[0].ADDRESS %></p>
+        <hr>
+        <p>Owner ID : <%- o[0].OWNER_ID %></p>
+        <hr>
+    </div>
+
+    <div class="click">
+        <h3 class="addroomhead">Click here to add PG</h3>
+
+        <a class="addroom" href="/addpg?Owner_ID=<%- o[0].OWNER_ID %>">PG</a>
+    </div>
+    
+    
+
+        <div class="heading">
+            <h1>PG's</h1>
+        </div>
+
+        <table border="1" class="profile_page">
+            <tr class="tr">
+                <th class="th">Name</th>
+                <th class="th">Landmark</th>
+                <th class="th">Address</th>
+                <th class="th">Actions</th>
+            </tr>
+
+            <% if(Room.length>0){ %>
+                <% for(var i=0;i < Room.length;i++){%>
+                    <tr class="tr">
+                        <td> <a id="roomlink" href="/pg_name<%= Room[i].PG_NAME %>"><%- Room[i].PG_NAME %></a></td>
+                        <td><%- Room[i].LANDMARK %></td>
+                        <td><%- Room[i].LOCATION %></td>
+                        <td>
+                            <a class="delete" href="/deletepg?PG_ID=<%- Room[i].PG_ID %>">delete</a>
+                            <a class="delete" id="update" href="/updatepg?PG_ID=<%- Room[i].PG_ID %>">update</a>
+                        </td>
+                    </tr>
+                    <%} %>
+                        <% }else{ %>
+                            <tr>
+                                <td>Data not found</td>
+                            </tr>
+                            <% } %>
+        </table>
+
+        <div class="click">
+            <h3 class="addroomhead">Click here to add Flat</h3>
+    
+            <a class="addroom" href="/addflat?Owner_ID=<%- o[0].OWNER_ID%>">Flat</a>
+
+        <h1 class="heading">Flats</h1>
+        <table border="1" width="100%" class="profile_page">
+            <tr>
+                <th class="th">Name</th>
+                <th class="th">Landmark</th>
+                <th class="th">Address</th>
+                <th class="th">Actions</th>
+            </tr>
+
+            <% if(flat.length>0){ %>
+                <% for(var i=0;i < flat.length;i++){%>
+                    <tr class="tr">
+                        <td><a id="roomlink" href="/flat_name<%= flat[i].FLAT_NAME %>"><%- flat[i].FLAT_NAME-%>
+                        </td>
+                        <td><%- flat[i].LANDMARK %></td>
+                        <td><%- flat[i].LOCATION %></td>
+                        <td>
+                            <a id="flatdel" class="delete" href="/deleteflat?Flat_ID=<%- flat[i].FLAT_ID %>">delete</a>
+                            <a class="update" href="/updateflat?Flat_ID=<%- flat[i].FLAT_ID %>">update</a>
+                            %></a>
+
+
+                        </td>
+                    </tr>
+                    <%} %>
+                        <% }else{ %>
+                            <tr>
+                                <td>Data not found</td>
+                            </tr>
+                            <% } %>
+        </table>
+
+
+        <script src="rental_link.js">
+
+        </script>
+</body>
+
+</html>

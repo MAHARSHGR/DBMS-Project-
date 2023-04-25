@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Room List</title>
+
+</head>
+<header>
+    <h1 id="h1">
+        <a href="home"><img src="/logo.jpg" alt="logo" id="logo"></a>
+        RENTAL SOLUTIONS
+    </h1>
+
+    <hr>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/flats">Flats</a></li>
+            <li><a href="/">Logout</a></li>
+            <!-- <li><a href="tenant.html">Tenant</a></li> -->
+        </ul>
+    </nav>
+</header>
+<div>
+
+    <body id="color">
+        <div class="heading">
+            <h1>Search here</h1>
+        </div>
+        <form action="/search">
+            <input type="search" name="LOCATION" placeholder="Search by location" class="bar">
+            <input type="submit" value="Search" class="bar">
+        </form>
+        <h1 class="heading">Room List</h1>
+        <table border="1" width="100%" class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Landmark</th>
+                </tr>
+            </thead>
+
+            <% if(Room.length>0){ %>
+                <% for(var i=0;i < Room.length;i++){%>
+                    <tr>
+                        
+                        <td><a href="/pg_name<%=Room[i].PG_NAME%>"><%- Room[i].PG_NAME %></a></td>
+                        <td><%- Room[i].LOCATION%></td>
+                        <td><%- Room[i].LANDMARK%></td>
+                    </tr>
+                    <%} %>
+                        <% }else{ %>
+                            <tr>
+                                <td>Data not found</td>
+                            </tr>
+                            <% } %>
+        </table>
+
+    </body>
+
+</html>

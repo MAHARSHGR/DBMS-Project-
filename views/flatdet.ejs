@@ -1,0 +1,72 @@
+<!-- flatdet.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Link</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            
+        }
+    </style>
+</head>
+
+    <header>
+        <h1 id="h1">
+            <a href="/"><img src="/logo.jpg" alt="logo" id="logo" ></a>
+            RENTAL LINK</h1>
+        
+        <!-- <hr> -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <!-- <li><a href="/flats">Back</a></li> -->
+                <li id="go-back">Back</li>
+
+                <!-- <li><a href="signup.html">Login</a></li> -->
+                <!-- <li><a href="rental_link.html">SignUp</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <body id="color">
+        
+    
+   <h1>FLAT DETAILS</h1>
+    <div class="pgdet">
+        <div class="pgname"><h1 class="pgname"><%- Room[0].Name %> </h1></div>
+        <hr>
+        <p>Flat_ID  is <%- Room[0].FLAT_ID %></p>
+        <hr>
+        <p>Located near <%- Room[0].LANDMARK %></p>
+        <hr>
+        <p>Address: <%- Room[0].LOCATION %></p>
+        <hr>
+        <p>No of rooms: <%- Room[0].NO_OF_ROOMS %></p>
+        <hr>
+        <p>Contact: <%- Room[0].CONTACT %> </p>
+    </div>
+</div>
+    </section>
+    <!-- <footer>
+        <div class="center">
+            Copyright &copy; www.RentalLink.com. All rights reserved
+        </div>
+    </footer> -->
+</body>
+    <script src="rental_link.js">
+
+    </script>
+     <script>
+        document.getElementById('go-back').addEventListener('click',()=>{
+            history.back();
+        })
+    </script>
+
+
+</html>
